@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements Observer {
         initViews(product);
         //Inicialização a lib com parametros necessarios
         PSCheckoutConfig psCheckoutConfig = new PSCheckoutConfig();
-        psCheckoutConfig.setSellerEmail("ederfmatos@gmail.com");
-        psCheckoutConfig.setSellerToken("B5A75DD883044D1AB4826865FB186D23");
+        psCheckoutConfig.setSellerEmail("EMAIL DA CONTA DO VENDEDOR");
+        psCheckoutConfig.setSellerToken("TOKEN DA CONTA");
 //Informe o fragment container
         psCheckoutConfig.setContainer(R.id.conatierfragment);
 
@@ -107,21 +107,21 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
                         PSTransparentDefaultRequest psTransparentDefaultRequest = new PSTransparentDefaultRequest();
                         psTransparentDefaultRequest
-                                .setDocumentNumber("40076123820")
+                                .setDocumentNumber("CPF DO COMPRADOR")
                                 .setName(creditCard.getName())
-                                .setEmail("ederfmatos@sandbox.pagseguro.com.br")
-                                .setAreaCode("16")
-                                .setPhoneNumber("999644153")
-                                .setStreet("Rua Josefina Vidoretti de Oliveira")
+                                .setEmail("EMAIL DO COMPRADOR")
+                                .setAreaCode("AREA")
+                                .setPhoneNumber("NUMERO DE TELEFONE")
+                                .setStreet("ENDEREÇO")
                                 .setAddressComplement("")
-                                .setAddressNumber("61")
-                                .setDistrict("Jaboticabal")
-                                .setCity("Guariba")
+                                .setAddressNumber("NUMERO DA CASA")
+                                .setDistrict("DISTRITO(ESTADO")
+                                .setCity("CIDADE")
                                 .setState("SP")
                                 .setCountry("BRA")
-                                .setPostalCode("14840000")
-                                .setTotalValue("50.00")
-                                .setAmount("50.00")
+                                .setPostalCode("CEP DO COMPRADOR")
+                                .setTotalValue("VALOR TOTAL DA COMPRA")
+                                .setAmount("VALOR DA PARCEA")
                                 .setDescriptionPayment("Pagamento do teste de integração")
                                 .setQuantity(creditCard.getParcels())
                                 .setCreditCard(creditCard.getCardNumber())
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
                                 .setCvv(creditCard.getCvv())
                                 .setExpMonth(creditCard.getMonth())
                                 .setExpYear(creditCard.getYear())
-                                .setBirthDate("04/05/1988");
+                                .setBirthDate("DATA DE NASCIMENTO DO COMPRADOR");
 
                         PSCheckout.payTransparentDefault(psTransparentDefaultRequest, psCheckoutListener, MainActivity.this);
 
